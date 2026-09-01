@@ -1,5 +1,7 @@
 import { Heart } from "lucide-react";
 
+const A = import.meta.env.BASE_URL + "assets";
+
 /**
  * Cards de comentário estilo Instagram, em espanhol — substituem os screenshots
  * (depo-*.jpg) do funil original. Para usar fotos reais no avatar, troque
@@ -11,6 +13,7 @@ type Comment = {
   time: string;
   byAuthor?: boolean;
   likes?: number;
+  avatar?: string;
   text: string;
 };
 
@@ -18,6 +21,7 @@ export const COMMENTS: Comment[] = [
   {
     user: "vanessamottapaz",
     time: "hace 15 min",
+    avatar: `${A}/av-vanessa.jpg`,
     text:
       "¡Vale muchííísimo!!! Testimonio sincero: me impresionó que entrega mucho más de lo que está vendiendo. Ya compré otros ebooks que no entregan ni la mitad de este contenido. ¡Felicitaciones Patricia y gracias por el excelente trabajo!",
   },
@@ -30,6 +34,7 @@ export const COMMENTS: Comment[] = [
   {
     user: "erica_degli_",
     time: "hace 14 h",
+    avatar: `${A}/av-erica.jpg`,
     text:
       "Vengo a elogiar el e-book (estoy encantada); entrega mucho más de lo que imaginaba. ¡Estoy feliz!!!! 😍 ¡felicitaciones por el trabajo!",
   },
@@ -38,6 +43,7 @@ export const COMMENTS: Comment[] = [
     time: "hace 6 sem",
     byAuthor: true,
     likes: 4,
+    avatar: `${A}/av-beta.jpg`,
     text:
       "Pathy, quería agradecerte por el e-book, ¡fue un antes y un después en mi vida!!! Entregas mucho más de lo que prometes. Es un cambio de vida jaja!! Ahora logro hacer compras con intención, y de a poco estoy entrenando mi mirada para lo que de verdad encaja en mi clóset. Y cuando me da pereza pensar en el look, entro al e-book y elijo fácil qué ponerme. ¡Muchas gracias de verdad!!! ❤️👏",
   },
@@ -46,12 +52,14 @@ export const COMMENTS: Comment[] = [
     time: "hace 19 h",
     byAuthor: true,
     likes: 4,
+    avatar: `${A}/av-camila.jpg`,
     text:
       'Durante mucho tiempo dejé de arreglarme por esos comentarios y porque "llamaba mucho la atención". Pero desde hace un tiempo dejé de darles importancia y volví a vestirme mejor. Compré tu guía para rehacer mi clóset literalmente desde cero. Doné todo lo que tenía y me estoy inspirando en tu guía, que me ha ayudado muchísimo.',
   },
   {
     user: "antunesvanessa22",
     time: "hace 13 min",
+    avatar: `${A}/av-antunes.jpg`,
     text:
       "@pathyalvarenga ¡Compré la guía y me encantó!!! ¡Ya tengo muchas ideas de cómo armar los looks con lo que ya tengo!!! ❤️",
   },
@@ -68,13 +76,21 @@ function avatarColor(name: string) {
 function CommentCard({ c }: { c: Comment }) {
   return (
     <div className="flex gap-3 rounded-xl border border-border bg-background p-4 text-left">
-      <div
-        className="w-9 h-9 shrink-0 rounded-full flex items-center justify-center text-white text-sm font-semibold"
-        style={{ background: avatarColor(c.user) }}
-        aria-hidden
-      >
-        {c.user[0].toUpperCase()}
-      </div>
+      {c.avatar ? (
+        <img
+          src={c.avatar}
+          alt={c.user}
+          className="w-9 h-9 shrink-0 rounded-full object-cover"
+        />
+      ) : (
+        <div
+          className="w-9 h-9 shrink-0 rounded-full flex items-center justify-center text-white text-sm font-semibold"
+          style={{ background: avatarColor(c.user) }}
+          aria-hidden
+        >
+          {c.user[0].toUpperCase()}
+        </div>
+      )}
       <div className="flex-1 min-w-0">
         <p className="text-sm text-foreground leading-snug">
           <span className="font-semibold">{c.user}</span>{" "}
