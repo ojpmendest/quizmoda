@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Play, ShieldCheck } from "lucide-react";
 import { track } from "../analytics";
 
-const A = "/assets";
+const A = import.meta.env.BASE_URL + "assets";
 
 // TODO integração (depois): trocar pelo checkout definitivo em espanhol / dólar.
 const CHECKOUT_BASE = "https://pay.hotmart.com/R103909069C?off=zg252akl&checkoutMode=10";

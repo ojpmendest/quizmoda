@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ChevronRight, Check } from "lucide-react";
 import { track } from "../analytics";
 
-const A = "/assets";
+const A = import.meta.env.BASE_URL + "assets";
 
 const STEPS = [
   "intro_start",
