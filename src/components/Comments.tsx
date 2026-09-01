@@ -29,7 +29,7 @@ export const COMMENTS: Comment[] = [
     user: "sofi.vega",
     time: "hace 1 h",
     text:
-      "Chicas, compré el e-book y me encantó. Ya vi a otras personas vendiendo e-books así, pero no eran tan buenos como parecían. El de @pathyalvarenga es sensacional 🙌",
+      "Chicas, compré el e-book y me encantó. Ya vi a otras personas vendiendo e-books así, pero no eran tan buenos como parecían. El de @patyalvarez es sensacional 🙌",
   },
   {
     user: "dani.gtz",
@@ -45,7 +45,7 @@ export const COMMENTS: Comment[] = [
     likes: 4,
     avatar: `${A}/av-beta.jpg`,
     text:
-      "Pathy, quería agradecerte por el e-book, ¡fue un antes y un después en mi vida!!! Entregas mucho más de lo que prometes. Es un cambio de vida jaja!! Ahora logro hacer compras con intención, y de a poco estoy entrenando mi mirada para lo que de verdad encaja en mi clóset. Y cuando me da pereza pensar en el look, entro al e-book y elijo fácil qué ponerme. ¡Muchas gracias de verdad!!! ❤️👏",
+      "Paty, quería agradecerte por el e-book, ¡fue un antes y un después en mi vida!!! Entregas mucho más de lo que prometes. Es un cambio de vida jaja!! Ahora logro hacer compras con intención, y de a poco estoy entrenando mi mirada para lo que de verdad encaja en mi clóset. Y cuando me da pereza pensar en el look, entro al e-book y elijo fácil qué ponerme. ¡Muchas gracias de verdad!!! ❤️👏",
   },
   {
     user: "cami.mrn",
@@ -61,7 +61,7 @@ export const COMMENTS: Comment[] = [
     time: "hace 13 min",
     avatar: `${A}/av-antunes.jpg`,
     text:
-      "@pathyalvarenga ¡Compré la guía y me encantó!!! ¡Ya tengo muchas ideas de cómo armar los looks con lo que ya tengo!!! ❤️",
+      "@patyalvarez ¡Compré la guía y me encantó!!! ¡Ya tengo muchas ideas de cómo armar los looks con lo que ya tengo!!! ❤️",
   },
 ];
 

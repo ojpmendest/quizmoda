@@ -484,7 +484,7 @@ export default function Quiz() {
           <div className="flex flex-col items-center justify-center flex-1 space-y-8 py-10">
             <img
               src={`${A}/patricia-DtoQARG9.jpg`}
-              alt="Patricia Alvarenga"
+              alt="Patricia Álvarez"
               className="w-56 h-56 md:w-64 md:h-64 rounded-3xl object-cover shadow-lg"
             />
             <ProgressBar label="Analizando tu perfil según tus respuestas" />

@@ -113,10 +113,10 @@ function useName() {
 function MockHeader() {
   return (
     <div className="flex items-center gap-2 px-3 pt-3">
-      <img src={`${A}/av-patricia.jpg`} alt="Patricia Alvarenga" className="w-6 h-6 rounded-full object-cover" />
+      <img src={`${A}/av-patricia.jpg`} alt="Patricia Álvarez" className="w-6 h-6 rounded-full object-cover" />
       <div className="leading-tight">
-        <p className="text-[10px] font-semibold text-foreground">Patricia Alvarenga</p>
-        <p className="text-[9px] text-muted-foreground">@pathyalvarenga</p>
+        <p className="text-[10px] font-semibold text-foreground">Patricia Álvarez</p>
+        <p className="text-[9px] text-muted-foreground">@patyalvarez</p>
       </div>
     </div>
   );
@@ -363,7 +363,7 @@ function About() {
       <div className="container mx-auto px-5 md:px-16 max-w-2xl space-y-6">
         <h2 className="text-center text-foreground text-2xl md:text-3xl font-bold">Sobre mí</h2>
         <p className="text-foreground leading-relaxed">
-          Patricia Alvarenga es consultora de imagen y comenzó su camino compartiendo el dolor de muchas mujeres: la
+          Patricia Álvarez es consultora de imagen y comenzó su camino compartiendo el dolor de muchas mujeres: la
           insatisfacción con la imagen personal y la dificultad de encajar en los estándares impuestos en el universo de
           la moda, el estilo y la imagen.
         </p>
@@ -372,7 +372,7 @@ function About() {
         </p>
         <img
           src={`${A}/patricia-DtoQARG9.jpg`}
-          alt="Patricia Alvarenga, consultora de imagen"
+          alt="Patricia Álvarez, consultora de imagen"
           className="w-full rounded-2xl object-cover"
         />
       </div>
@@ -427,7 +427,7 @@ export default function Oferta() {
       <Guarantee />
       <footer className="py-8 bg-navy border-t border-gold/10">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-cream/30 text-sm">© 2026, Patricia Alvarenga. Todos los derechos reservados.</p>
+          <p className="text-cream/30 text-sm">© 2026, Patricia Álvarez. Todos los derechos reservados.</p>
         </div>
       </footer>
     </main>
