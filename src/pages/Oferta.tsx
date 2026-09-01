@@ -73,15 +73,15 @@ const BONUS = [
   "Guías de combinación de prendas, materiales generales con combinaciones por tipo de prenda: blusa, pantalón, falda y otras (para quienes envíen sus looks).",
 ];
 
-const RESULT_IMGS = [
-  `${A}/looks-adriely-Cwcudlr2.jpg`,
-  `${A}/looks-clara-0m-JWbhg.jpg`,
-  `${A}/looks-indianara-B8zhfQTC.jpg`,
-  `${A}/looks-juliana-Bwzs0WJ2.jpg`,
-  `${A}/looks-gabriela-lDo2dx3c.jpg`,
-  `${A}/looks-analuiza-wygCx5_v.jpg`,
-  `${A}/looks-rosana-BQG3EoyS.jpg`,
-  `${A}/looks-lais-BNyPyCoE.jpg`,
+const RESULT_IMGS: { src: string; name: string }[] = [
+  { src: `${A}/looks-adriely-Cwcudlr2.jpg`, name: "Ximena" },
+  { src: `${A}/looks-clara-0m-JWbhg.jpg`, name: "Andrea" },
+  { src: `${A}/looks-indianara-B8zhfQTC.jpg`, name: "Paulina" },
+  { src: `${A}/looks-juliana-Bwzs0WJ2.jpg`, name: "Mariana" },
+  { src: `${A}/looks-gabriela-lDo2dx3c.jpg`, name: "Alejandra" },
+  { src: `${A}/looks-analuiza-wygCx5_v.jpg`, name: "Renata" },
+  { src: `${A}/looks-rosana-BQG3EoyS.jpg`, name: "Carolina" },
+  { src: `${A}/looks-lais-BNyPyCoE.jpg`, name: "Mónica" },
 ];
 
 const BEFORE = [
@@ -107,6 +107,55 @@ function useName() {
   const [name, setName] = useState("");
   useEffect(() => setName(localStorage.getItem("quiz_name") || ""), []);
   return name;
+}
+
+/** Mini header shown inside the benefit-preview mockups (in place of the PT screenshots). */
+function MockHeader() {
+  return (
+    <div className="flex items-center gap-2 px-3 pt-3">
+      <img src={`${A}/av-patricia.jpg`} alt="Patricia Alvarenga" className="w-6 h-6 rounded-full object-cover" />
+      <div className="leading-tight">
+        <p className="text-[10px] font-semibold text-foreground">Patricia Alvarenga</p>
+        <p className="text-[9px] text-muted-foreground">@pathyalvarenga</p>
+      </div>
+    </div>
+  );
+}
+
+function MockLinks() {
+  return (
+    <div className="w-full h-full overflow-hidden bg-background flex flex-col">
+      <MockHeader />
+      <div className="px-3 mt-1">
+        <p className="text-[11px] text-foreground">Enlaces de las 30 prendas</p>
+        <p className="text-xs font-bold text-foreground border-b border-border pb-1">Calzado</p>
+      </div>
+      <div className="grid grid-cols-3 gap-1 px-3 mt-2">
+        {["shoe-heel", "shoe-sandalheel", "shoe-sneaker"].map((s) => (
+          <div key={s} className="flex flex-col items-center gap-1">
+            <img src={`${A}/${s}.png`} alt="" className="h-10 object-contain" />
+            <span className="text-[8px] font-bold text-white bg-green-700 rounded px-2 py-0.5">Opción 1</span>
+            <span className="text-[8px] font-bold text-white bg-green-700 rounded px-2 py-0.5">Opción 2</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MockClimas() {
+  return (
+    <div className="w-full h-full overflow-hidden bg-background flex flex-col">
+      <MockHeader />
+      <p className="text-xs font-bold text-foreground text-center px-3 mt-1 leading-tight">
+        Sustituciones para climas más fríos ❄️
+      </p>
+      <img src={`${A}/clima-row0.png`} alt="Sustituciones de prendas para frío" className="w-full object-contain mt-1 px-2" />
+      <p className="text-[8px] text-muted-foreground px-3 mt-1 leading-tight">
+        Tops sin mangas → blusas térmicas de manga larga (en negro y blanco).
+      </p>
+    </div>
+  );
 }
 
 function Benefits() {
@@ -135,20 +184,8 @@ function Benefits() {
                     <img src={`${A}/look-2-CYMxGEya.jpg`} alt="Look 2" className="w-1/2 h-full object-cover" />
                   </div>
                 )}
-                {b.type === "links" && (
-                  <img
-                    src={`${A}/links-calcados-D65_c9BC.png`}
-                    alt="Enlaces de las prendas"
-                    className="w-full h-full object-cover object-top"
-                  />
-                )}
-                {b.type === "climas" && (
-                  <img
-                    src={`${A}/climas-frios-BeG6_2Lr.png`}
-                    alt="Adaptación a diferentes climas"
-                    className="w-full h-full object-cover object-top"
-                  />
-                )}
+                {b.type === "links" && <MockLinks />}
+                {b.type === "climas" && <MockClimas />}
                 {b.type === "masterclass" && (
                   <div className="relative w-full h-full">
                     <img
@@ -261,8 +298,13 @@ function SocialProof() {
         </h2>
         <CommentList className="mb-8" />
         <div className="space-y-4">
-          {RESULT_IMGS.map((src, i) => (
-            <img key={i} src={src} alt={`Resultado ${i + 1}`} className="w-full rounded-xl border border-border" />
+          {RESULT_IMGS.map((r, i) => (
+            <div key={i} className="relative">
+              <img src={r.src} alt={`Resultado de ${r.name}`} className="w-full rounded-xl border border-border" />
+              <span className="absolute top-2 left-1/2 -translate-x-1/2 bg-white/95 text-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                {r.name}
+              </span>
+            </div>
           ))}
         </div>
       </div>
