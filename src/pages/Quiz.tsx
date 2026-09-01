@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ChevronRight, Check } from "lucide-react";
 import { track } from "../analytics";
+import { CommentList } from "../components/Comments";
 
 const A = import.meta.env.BASE_URL + "assets";
 
@@ -44,18 +45,8 @@ const VARIANT_COPY: Record<Variant, { intro: string; body: string }> = {
 
 const PRELOAD: Partial<Record<Step, string[]>> = {
   age: [`${A}/age-1-BXGbnnI4.jpg`, `${A}/age-2-Dsu6hjrq.jpg`, `${A}/age-3-CQ5ERWLX.jpg`, `${A}/age-4-CbsciYeo.jpg`],
-  loading1: [
-    `${A}/depo-vanessa-B-4Z8n-5.jpg`,
-    `${A}/depo-vitt-Cx4B9bhY.jpg`,
-    `${A}/depo-erica-B0lcah9z.jpg`,
-    `${A}/depo-beta-C5ssDnIO.jpg`,
-    `${A}/depo-camila-BJU4bx5L.jpg`,
-    `${A}/depo-antunes-BojjWPd7.jpg`,
-  ],
   loading2: [`${A}/patricia-DtoQARG9.jpg`],
 };
-
-const DEPO_IMGS = PRELOAD.loading1!;
 
 function Shell({
   title,
@@ -442,16 +433,7 @@ export default function Quiz() {
           <div className="space-y-6">
             <ProgressBar label="Cargando..." />
             <p className="text-center text-muted-foreground text-sm">Preparando las siguientes preguntas...</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              {DEPO_IMGS.map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt={`Testimonio ${i + 1}`}
-                  className="w-full rounded-xl border border-border object-cover"
-                />
-              ))}
-            </div>
+            <CommentList className="pt-2" />
           </div>
         )}
 

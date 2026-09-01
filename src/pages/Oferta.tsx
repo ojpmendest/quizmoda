@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Play, ShieldCheck } from "lucide-react";
 import { track } from "../analytics";
+import { CommentList } from "../components/Comments";
 
 const A = import.meta.env.BASE_URL + "assets";
 
@@ -70,15 +71,6 @@ const BONUS = [
   "Clóset de trabajo.",
   "Clóset de verano.",
   "Guías de combinación de prendas, materiales generales con combinaciones por tipo de prenda: blusa, pantalón, falda y otras (para quienes envíen sus looks).",
-];
-
-const COMMENT_IMGS = [
-  `${A}/depo-beta-C5ssDnIO.jpg`,
-  `${A}/depo-camila-BJU4bx5L.jpg`,
-  `${A}/depo-vanessa-B-4Z8n-5.jpg`,
-  `${A}/depo-erica-B0lcah9z.jpg`,
-  `${A}/depo-vitt-Cx4B9bhY.jpg`,
-  `${A}/depo-antunes-BojjWPd7.jpg`,
 ];
 
 const RESULT_IMGS = [
@@ -267,11 +259,7 @@ function SocialProof() {
         <h2 className="text-center text-foreground text-2xl md:text-3xl font-bold leading-tight mb-8">
           Únete a las mujeres que están aprovechando esta oportunidad.
         </h2>
-        <div className="space-y-4 mb-8">
-          {COMMENT_IMGS.map((src, i) => (
-            <img key={i} src={src} alt={`Comentario ${i + 1}`} className="w-full rounded-xl border border-border" />
-          ))}
-        </div>
+        <CommentList className="mb-8" />
         <div className="space-y-4">
           {RESULT_IMGS.map((src, i) => (
             <img key={i} src={src} alt={`Resultado ${i + 1}`} className="w-full rounded-xl border border-border" />
