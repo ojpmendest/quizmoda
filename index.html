@@ -14,7 +14,44 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- TODO integrações (depois): GTM, Meta Pixel, verificação de domínio, VK Metrics -->
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "1939378656742658");
+      fbq("track", "PageView");
+    </script>
+    <!-- End Meta Pixel Code -->
+    <!-- (noscript <img> omitido: o funil exige JS) -->
+
+    <!-- captura fbclid -> fbc para atribuição no checkout -->
+    <script>
+      (function () {
+        var p = new URLSearchParams(window.location.search);
+        var fbclid = p.get("fbclid");
+        if (fbclid) {
+          try {
+            localStorage.setItem("meta_fbc", "fb.1." + Math.floor(Date.now() / 1000) + "." + fbclid);
+          } catch (e) {}
+        }
+      })();
+    </script>
+
+    <!-- TODO integrações (depois): GTM, verificação de domínio Facebook, VK Metrics -->
   </head>
   <body>
     <div id="root"></div>

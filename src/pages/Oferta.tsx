@@ -17,6 +17,12 @@ function checkoutUrl() {
   inParams.forEach((v, k) => {
     if (!k.startsWith("__")) out.set(k, v);
   });
+  try {
+    const fbc = localStorage.getItem("meta_fbc");
+    if (fbc && !out.has("sck")) out.set("sck", fbc);
+  } catch (e) {
+    /* localStorage unavailable */
+  }
   return out.toString() ? `${CHECKOUT_BASE}&${out.toString()}` : CHECKOUT_BASE;
 }
 

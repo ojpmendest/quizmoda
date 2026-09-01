@@ -25,7 +25,23 @@ function utm() {
   };
 }
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
+// PostHog event -> Meta standard event
+const FB_EVENTS: Record<string, string> = {
+  quiz_start: "ViewContent",
+  oferta_view: "ViewContent",
+  quiz_complete: "Lead",
+  checkout_click: "InitiateCheckout",
+};
+
 export function track(event: string, props: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
   posthog.capture(event, { ...utm(), ...props });
+  const fb = FB_EVENTS[event];
+  if (fb && window.fbq) window.fbq("track", fb);
 }
