@@ -19,27 +19,27 @@ type Comment = {
 
 export const COMMENTS: Comment[] = [
   {
-    user: "vanessamottapaz",
+    user: "valentina.rmz",
     time: "hace 15 min",
     avatar: `${A}/av-vanessa.jpg`,
     text:
       "¡Vale muchííísimo!!! Testimonio sincero: me impresionó que entrega mucho más de lo que está vendiendo. Ya compré otros ebooks que no entregan ni la mitad de este contenido. ¡Felicitaciones Patricia y gracias por el excelente trabajo!",
   },
   {
-    user: "vitt_soyap",
+    user: "sofi.vega",
     time: "hace 1 h",
     text:
       "Chicas, compré el e-book y me encantó. Ya vi a otras personas vendiendo e-books así, pero no eran tan buenos como parecían. El de @pathyalvarenga es sensacional 🙌",
   },
   {
-    user: "erica_degli_",
+    user: "dani.gtz",
     time: "hace 14 h",
     avatar: `${A}/av-erica.jpg`,
     text:
       "Vengo a elogiar el e-book (estoy encantada); entrega mucho más de lo que imaginaba. ¡Estoy feliz!!!! 😍 ¡felicitaciones por el trabajo!",
   },
   {
-    user: "beta.amr",
+    user: "fer.castillo",
     time: "hace 6 sem",
     byAuthor: true,
     likes: 4,
@@ -48,7 +48,7 @@ export const COMMENTS: Comment[] = [
       "Pathy, quería agradecerte por el e-book, ¡fue un antes y un después en mi vida!!! Entregas mucho más de lo que prometes. Es un cambio de vida jaja!! Ahora logro hacer compras con intención, y de a poco estoy entrenando mi mirada para lo que de verdad encaja en mi clóset. Y cuando me da pereza pensar en el look, entro al e-book y elijo fácil qué ponerme. ¡Muchas gracias de verdad!!! ❤️👏",
   },
   {
-    user: "camila.alep",
+    user: "cami.mrn",
     time: "hace 19 h",
     byAuthor: true,
     likes: 4,
@@ -57,7 +57,7 @@ export const COMMENTS: Comment[] = [
       'Durante mucho tiempo dejé de arreglarme por esos comentarios y porque "llamaba mucho la atención". Pero desde hace un tiempo dejé de darles importancia y volví a vestirme mejor. Compré tu guía para rehacer mi clóset literalmente desde cero. Doné todo lo que tenía y me estoy inspirando en tu guía, que me ha ayudado muchísimo.',
   },
   {
-    user: "antunesvanessa22",
+    user: "regina.luna_",
     time: "hace 13 min",
     avatar: `${A}/av-antunes.jpg`,
     text:
