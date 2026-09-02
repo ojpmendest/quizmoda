@@ -287,11 +287,10 @@ function Offer() {
           </div>
         </div>
 
-        <CheckoutLink className={CARD_BTN}>¡Sí, quiero mis 300 looks!</CheckoutLink>
-        <p className="text-center text-xs text-muted-foreground mt-4">
-          En la página de pago verás el precio convertido a la moneda de tu país.
+        <p className="text-center text-sm text-muted-foreground mb-3">
+          El pago es seguro y en la página de pago verás el precio convertido a la moneda de tu país.
         </p>
-        <p className="text-center text-xs text-muted-foreground mt-1">MasterCard · Visa · Amex · Diners</p>
+        <CheckoutLink className={CARD_BTN}>¡Sí, quiero mis 300 looks!</CheckoutLink>
       </div>
     </section>
   );
@@ -325,8 +324,10 @@ function DownloadCta() {
     <section className="py-10 md:py-12 bg-background">
       <div className="container mx-auto px-5 max-w-xl text-center space-y-5">
         <h2 className="text-foreground text-2xl md:text-3xl font-bold">Descarga ahora tu guía</h2>
+        <p className="text-sm text-muted-foreground">
+          El pago es seguro y verás el precio en la moneda de tu país.
+        </p>
         <CheckoutLink className={CARD_BTN}>¡Quiero transformar mi imagen!</CheckoutLink>
-        <p className="text-xs text-muted-foreground">MasterCard · Visa · Amex · Diners</p>
       </div>
     </section>
   );
