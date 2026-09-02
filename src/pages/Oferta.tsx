@@ -5,8 +5,7 @@ import { CommentList } from "../components/Comments";
 
 const A = import.meta.env.BASE_URL + "assets";
 
-// TODO integração (depois): trocar pelo checkout definitivo em espanhol / dólar.
-const CHECKOUT_BASE = "https://pay.hotmart.com/R103909069C?off=zg252akl&checkoutMode=10";
+const CHECKOUT_BASE = "https://pay.hotmart.com/R107426993S?checkoutMode=10";
 
 /** forwards utm/query params onto the checkout URL, same behaviour as the original */
 function checkoutUrl() {
