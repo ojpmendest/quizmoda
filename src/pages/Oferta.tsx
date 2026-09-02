@@ -252,7 +252,7 @@ function Offer() {
             </span>
           </div>
           <p className="text-foreground text-base md:text-lg leading-relaxed">
-            Haces un único pago de US$ 9,90 y tienes acceso al material de por vida.
+            Hoy haces un único pago de US$ 9,90 (en vez de US$ 197) y tienes acceso al material de por vida.
           </p>
           <div className="text-center pt-2">
             <span className="inline-block bg-foreground text-background text-2xl md:text-3xl font-bold px-4 py-1.5 rounded">
@@ -266,19 +266,20 @@ function Offer() {
 
         <div className="rounded-xl bg-destructive/10 py-3 text-center mb-3">
           <span className="text-destructive font-medium">
-            Oferta disponible por: {mm}:{ss}
+            El precio de lanzamiento termina hoy · {mm}:{ss}
           </span>
         </div>
 
         <div className="rounded-xl border-2 border-navy overflow-hidden mb-3">
-          {/* ponytail: original prometia "R$ 300 de desconto"; sem base em dólar, deixo condição genérica */}
           <div className="bg-navy text-cream text-center py-2 text-sm font-semibold">
-            Condición especial por tiempo limitado
+            Precio de lanzamiento · solo hoy
           </div>
           <div className="bg-background p-5 flex items-center justify-between gap-4">
             <div>
-              <p className="text-foreground text-lg md:text-xl font-bold">Todo esto por apenas:</p>
-              <p className="text-muted-foreground italic text-sm md:text-base">(sí, así es)</p>
+              <p className="text-foreground text-lg md:text-xl font-bold">Todo esto por:</p>
+              <p className="text-muted-foreground text-sm md:text-base">
+                De <span className="line-through">US$ 197</span> — hoy solo pagas
+              </p>
             </div>
             <div className="bg-muted rounded-lg px-4 py-3 text-center shrink-0">
               <p className="text-foreground text-2xl md:text-3xl font-bold">US$ 9,90</p>
