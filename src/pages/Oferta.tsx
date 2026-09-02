@@ -288,7 +288,10 @@ function Offer() {
         </div>
 
         <CheckoutLink className={CARD_BTN}>¡Sí, quiero mis 300 looks!</CheckoutLink>
-        <p className="text-center text-xs text-muted-foreground mt-4">MasterCard · Visa · Amex · Diners</p>
+        <p className="text-center text-xs text-muted-foreground mt-4">
+          En la página de pago verás el precio convertido a la moneda de tu país.
+        </p>
+        <p className="text-center text-xs text-muted-foreground mt-1">MasterCard · Visa · Amex · Diners</p>
       </div>
     </section>
   );
