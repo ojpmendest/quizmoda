@@ -259,8 +259,9 @@ function Offer() {
             <p className="text-muted-foreground text-lg md:text-xl">
               De <span className="line-through decoration-destructive decoration-2">US$ 197</span>
             </p>
-            <p className="text-foreground font-serif font-bold leading-none text-6xl md:text-7xl my-2">
-              US$ 9,90
+            <p className="my-2 flex items-baseline justify-center gap-1 text-foreground font-serif font-bold leading-none">
+              <span className="text-2xl md:text-3xl">US$</span>
+              <span className="text-6xl md:text-7xl">9,90</span>
             </p>
             <p className="text-navy font-semibold text-base md:text-lg">
               Hoy ahorras US$ 187
