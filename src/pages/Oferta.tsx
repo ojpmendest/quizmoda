@@ -245,53 +245,42 @@ function Offer() {
   return (
     <section id="oferta" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-5 md:px-16 max-w-xl">
-        <div className="space-y-6 mb-8">
-          <div className="text-center">
-            <span className="inline-block bg-foreground text-background text-2xl md:text-3xl font-bold px-4 py-1.5 rounded">
-              Acceso de por vida
-            </span>
-          </div>
-          <p className="text-foreground text-base md:text-lg leading-relaxed">
-            Hoy haces un único pago de US$ 9,90 (en vez de US$ 197) y tienes acceso al material de por vida.
-          </p>
-          <div className="text-center pt-2">
-            <span className="inline-block bg-foreground text-background text-2xl md:text-3xl font-bold px-4 py-1.5 rounded">
-              Riesgo CERO
-            </span>
-          </div>
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Garantizamos el reembolso total del valor pagado dentro de los 7 días posteriores a la compra.
-          </p>
+        {/* urgencia */}
+        <div className="rounded-xl bg-destructive text-destructive-foreground py-3 px-4 text-center mb-4 font-semibold text-sm md:text-base">
+          El precio de lanzamiento termina hoy · {mm}:{ss}
         </div>
 
-        <div className="rounded-xl bg-destructive/10 py-3 text-center mb-3">
-          <span className="text-destructive font-medium">
-            El precio de lanzamiento termina hoy · {mm}:{ss}
-          </span>
-        </div>
-
-        <div className="rounded-xl border-2 border-navy overflow-hidden mb-3">
-          <div className="bg-navy text-cream text-center py-2 text-sm font-semibold">
+        {/* precio — bloque principal */}
+        <div className="rounded-2xl border-2 border-navy overflow-hidden mb-4 shadow-lg">
+          <div className="bg-navy text-cream text-center py-2.5 text-sm md:text-base font-bold tracking-wide uppercase">
             Precio de lanzamiento · solo hoy
           </div>
-          <div className="bg-background p-5 flex items-center justify-between gap-4">
-            <div>
-              <p className="text-foreground text-lg md:text-xl font-bold">Todo esto por:</p>
-              <p className="text-muted-foreground text-sm md:text-base">
-                De <span className="line-through">US$ 197</span> — hoy solo pagas
-              </p>
-            </div>
-            <div className="bg-muted rounded-lg px-4 py-3 text-center shrink-0">
-              <p className="text-foreground text-2xl md:text-3xl font-bold">US$ 9,90</p>
-              <p className="text-[10px] text-muted-foreground">pago único</p>
-            </div>
+          <div className="bg-background px-5 py-7 text-center">
+            <p className="text-muted-foreground text-lg md:text-xl">
+              De <span className="line-through decoration-destructive decoration-2">US$ 197</span>
+            </p>
+            <p className="text-foreground font-serif font-bold leading-none text-6xl md:text-7xl my-2">
+              US$ 9,90
+            </p>
+            <p className="text-navy font-semibold text-base md:text-lg">
+              Hoy ahorras US$ 187
+            </p>
+            <p className="text-muted-foreground text-sm mt-1">Pago único · acceso de por vida</p>
           </div>
         </div>
 
         <p className="text-center text-sm text-muted-foreground mb-3">
           El pago es seguro y en la página de pago verás el precio convertido a la moneda de tu país.
         </p>
-        <CheckoutLink className={CARD_BTN}>¡Sí, quiero mis 300 looks!</CheckoutLink>
+        <CheckoutLink className={CARD_BTN}>¡Sí, quiero mis 300 looks por US$ 9,90!</CheckoutLink>
+
+        {/* garantía */}
+        <div className="mt-6 rounded-xl bg-muted p-5 text-center space-y-1">
+          <p className="text-foreground font-bold">Riesgo CERO · Garantía de 7 días</p>
+          <p className="text-muted-foreground text-sm">
+            Si en 7 días sientes que no es para ti, te devolvemos el 100% de lo que pagaste. Sin preguntas.
+          </p>
+        </div>
       </div>
     </section>
   );
