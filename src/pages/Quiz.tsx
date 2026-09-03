@@ -258,18 +258,30 @@ export default function Quiz() {
 
       <div className="flex-1 container max-w-2xl mx-auto px-5 py-8 md:py-12 flex flex-col">
         {step === "intro_start" && (
-          <div className="flex flex-col justify-center flex-1 gap-8 text-center">
+          <div className="flex flex-col justify-center flex-1 gap-5 text-center">
+            <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+              Guía 30 piezas · 300 looks
+            </p>
             <h1 className="font-serif text-2xl md:text-4xl text-foreground leading-tight">
-              Responde algunas preguntas rápidas y descubre cómo armar <strong>300 looks</strong> elegantes con apenas{" "}
-              <strong>30 prendas</strong>.
+              Empieza tu clóset de cero con <strong>30 piezas estratégicas</strong>
             </h1>
+            <img
+              src={`${A}/antes-despues.jpg`}
+              alt="Antes y después: de no saber qué ponerte a tener 300 looks con 30 piezas"
+              className="w-full rounded-2xl shadow-md"
+            />
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+              Responde unas preguntas rápidas —tu clima, tu rutina y tu estilo— y descubre tu lista de 30 piezas, los{" "}
+              300 looks ya armados y los enlaces de cada pieza.
+            </p>
             <button
               onClick={next}
               className="w-full h-14 md:h-16 rounded-xl text-cream text-base md:text-lg font-semibold shadow-md hover:opacity-95 transition-opacity"
               style={{ background: "linear-gradient(90deg, hsl(145 35% 45%), hsl(145 45% 55%))" }}
             >
-              Haz clic aquí para iniciar el quiz
+              Ver mi lista
             </button>
+            <p className="text-xs text-muted-foreground">Menos de 2 minutos</p>
           </div>
         )}
 
