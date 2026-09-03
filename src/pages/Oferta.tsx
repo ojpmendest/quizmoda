@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Play, ShieldCheck } from "lucide-react";
 import { track } from "../analytics";
 import { CommentList } from "../components/Comments";
+import { SalesToast } from "../components/SalesToast";
 
 const A = import.meta.env.BASE_URL + "assets";
 
@@ -450,6 +451,7 @@ export default function Oferta() {
   }, []);
   return (
     <main className="overflow-hidden">
+      <SalesToast />
       <Benefits />
       <Offer />
       <SocialProof />

@@ -203,6 +203,20 @@ export default function Quiz() {
     track("quiz_start");
   }, []);
 
+  // back-redirect: si intenta salir del quiz con "atrás", lo mandamos a la oferta (una vez por sesión)
+  useEffect(() => {
+    if (sessionStorage.getItem("back_redirect_done")) return;
+    history.pushState(null, "", window.location.href);
+    const onPop = () => {
+      if (sessionStorage.getItem("back_redirect_done")) return;
+      sessionStorage.setItem("back_redirect_done", "1");
+      track("back_redirect");
+      window.location.hash = "#/oferta";
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
   // one funnel event per step view — this is what PostHog reads to show drop-off
   useEffect(() => {
     track("quiz_step", { step_index: index, step_name: step });
