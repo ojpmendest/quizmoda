@@ -206,7 +206,7 @@ export default function Quiz() {
   // back-guard: al intentar salir con "atrás" (ya empezado el quiz), mostramos un aviso en vez de dejar salir
   const [showExit, setShowExit] = useState(false);
   useEffect(() => {
-    if (index < 1 || sessionStorage.getItem("back_guard_done")) return;
+    if (sessionStorage.getItem("back_guard_done")) return;
     history.pushState(null, "", window.location.href);
     const onPop = () => {
       if (sessionStorage.getItem("back_guard_done")) return;
@@ -216,7 +216,7 @@ export default function Quiz() {
     };
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
-  }, [index]);
+  }, []);
 
   const stayInQuiz = () => {
     setShowExit(false);
@@ -269,17 +269,17 @@ export default function Quiz() {
         <div className="fixed inset-0 z-50 bg-navy/60 flex items-center justify-center p-5">
           <div className="bg-background rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-xl">
             <h2 className="font-serif text-xl md:text-2xl text-foreground font-bold">
-              Espera, tu resultado está casi listo
+              Espera, no te vayas todavía
             </h2>
             <p className="text-muted-foreground text-sm">
-              Si sales ahora pierdes las 30 piezas y los 300 looks que estamos armando para ti.
+              En menos de 2 minutos descubres tus 30 piezas y los 300 looks que van contigo.
             </p>
             <button
               onClick={stayInQuiz}
               className="w-full h-12 rounded-xl text-cream font-semibold"
               style={{ background: "linear-gradient(90deg, hsl(145 35% 45%), hsl(145 45% 55%))" }}
             >
-              Seguir con el quiz
+              {index === 0 ? "Empezar ahora" : "Seguir con el quiz"}
             </button>
             <button onClick={leaveQuiz} className="text-xs text-muted-foreground underline">
               Salir de todos modos
