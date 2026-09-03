@@ -268,11 +268,12 @@ function Offer() {
             </p>
             <p className="text-muted-foreground text-sm mt-1">Pago único · acceso de por vida</p>
           </div>
+          <div className="bg-navy/5 border-t border-navy/10 px-5 py-3 flex items-center justify-center gap-2 text-foreground text-sm font-medium">
+            <ShieldCheck className="w-4 h-4 shrink-0 text-navy" />
+            <span>Pago 100% seguro · se cobra en la moneda de tu país</span>
+          </div>
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mb-3">
-          El pago es seguro y en la página de pago verás el precio convertido a la moneda de tu país.
-        </p>
         <CheckoutLink className={CARD_BTN}>¡Sí, quiero mis 300 looks por US$ 9,90!</CheckoutLink>
 
         {/* garantía */}
