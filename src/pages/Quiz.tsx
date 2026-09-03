@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, ChevronRight, Check } from "lucide-react";
+import { ArrowLeft, ChevronRight, Check, AlertTriangle } from "lucide-react";
 import { track } from "../analytics";
 import { CommentList } from "../components/Comments";
 
@@ -266,23 +266,27 @@ export default function Quiz() {
   return (
     <main className="min-h-screen bg-background flex flex-col">
       {showExit && (
-        <div className="fixed inset-0 z-50 bg-navy/60 flex items-center justify-center p-5">
-          <div className="bg-background rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-xl">
+        <div className="fixed inset-0 z-50 bg-navy/70 flex items-center justify-center p-5">
+          <div className="bg-background rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-xl border-2 border-destructive">
+            <div className="mx-auto w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+              <AlertTriangle className="w-6 h-6 text-destructive" />
+            </div>
             <h2 className="font-serif text-xl md:text-2xl text-foreground font-bold">
-              Espera, no te vayas todavía
+              Si sales ahora, este quiz se cierra
             </h2>
-            <p className="text-muted-foreground text-sm">
-              En menos de 2 minutos descubres tus 30 piezas y los 300 looks que van contigo.
+            <p className="text-foreground text-sm">
+              Es de acceso único. Si lo cierras <strong>no vas a poder volver a hacerlo</strong> y pierdes tu lista
+              personalizada de 30 piezas y tus 300 looks.
             </p>
             <button
               onClick={stayInQuiz}
               className="w-full h-12 rounded-xl text-cream font-semibold"
               style={{ background: "linear-gradient(90deg, hsl(145 35% 45%), hsl(145 45% 55%))" }}
             >
-              {index === 0 ? "Empezar ahora" : "Seguir con el quiz"}
+              {index === 0 ? "No, quiero empezar" : "No, quiero terminar"}
             </button>
             <button onClick={leaveQuiz} className="text-xs text-muted-foreground underline">
-              Salir de todos modos
+              Salir y perder mi acceso
             </button>
           </div>
         </div>
