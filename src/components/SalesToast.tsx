@@ -24,7 +24,7 @@ const PEOPLE = [
   ["Sofía", "Chihuahua"],
 ];
 
-const rnd = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
+const shuffle = <T,>(a: T[]) => [...a].sort(() => Math.random() - 0.5);
 
 export function SalesToast() {
   const [item, setItem] = useState<{ name: string; city: string; mins: number } | null>(null);
@@ -32,12 +32,14 @@ export function SalesToast() {
   useEffect(() => {
     let hideT: ReturnType<typeof setTimeout>;
     let nextT: ReturnType<typeof setTimeout>;
+    let queue = shuffle(PEOPLE);
 
     const show = () => {
-      const [name, city] = rnd(PEOPLE);
+      if (queue.length === 0) queue = shuffle(PEOPLE);
+      const [name, city] = queue.shift()!;
       setItem({ name, city, mins: 2 + Math.floor(Math.random() * 38) });
-      hideT = setTimeout(() => setItem(null), 5500);
-      nextT = setTimeout(show, 15000 + Math.random() * 18000);
+      hideT = setTimeout(() => setItem(null), 5000);
+      nextT = setTimeout(show, 6000);
     };
 
     const first = setTimeout(show, 6000);
