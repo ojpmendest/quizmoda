@@ -128,19 +128,27 @@ function MockHeader() {
 }
 
 function MockLinks() {
+  const rows = [
+    ["shoe-heel", "shoe-sandalheel", "shoe-sneaker"],
+    ["shoe-slide", "shoe-flat"],
+  ];
   return (
     <div className="w-full h-full overflow-hidden bg-background flex flex-col">
       <MockHeader />
       <div className="px-3 mt-1">
-        <p className="text-[11px] text-foreground">Enlaces de las 30 prendas</p>
+        <p className="text-[11px] text-foreground">Enlaces de las 30 piezas</p>
         <p className="text-xs font-bold text-foreground border-b border-border pb-1">Calzado</p>
       </div>
-      <div className="grid grid-cols-3 gap-1 px-3 mt-2">
-        {["shoe-heel", "shoe-sandalheel", "shoe-sneaker"].map((s) => (
-          <div key={s} className="flex flex-col items-center gap-1">
-            <img src={`${A}/${s}.png`} alt="" className="h-10 object-contain" />
-            <span className="text-[8px] font-bold text-white bg-green-700 rounded px-2 py-0.5">Opción 1</span>
-            <span className="text-[8px] font-bold text-white bg-green-700 rounded px-2 py-0.5">Opción 2</span>
+      <div className="flex-1 flex flex-col justify-around py-2">
+        {rows.map((row, i) => (
+          <div key={i} className="grid grid-cols-3 gap-1 px-3">
+            {row.map((s) => (
+              <div key={s} className="flex flex-col items-center gap-1">
+                <img src={`${A}/${s}.png`} alt="" className="h-10 object-contain" />
+                <span className="text-[8px] font-bold text-white bg-green-700 rounded px-2 py-0.5">Opción 1</span>
+                <span className="text-[8px] font-bold text-white bg-green-700 rounded px-2 py-0.5">Opción 2</span>
+              </div>
+            ))}
           </div>
         ))}
       </div>
@@ -153,11 +161,15 @@ function MockClimas() {
     <div className="w-full h-full overflow-hidden bg-background flex flex-col">
       <MockHeader />
       <p className="text-xs font-bold text-foreground text-center px-3 mt-1 leading-tight">
-        Sustituciones para climas más fríos ❄️
+        Sustituciones para tu clima
       </p>
-      <img src={`${A}/clima-row0.png`} alt="Sustituciones de prendas para frío" className="w-full object-contain mt-1 px-2" />
-      <p className="text-[8px] text-muted-foreground px-3 mt-1 leading-tight">
-        Tops sin mangas → blusas térmicas de manga larga (en negro y blanco).
+      <div className="flex-1 flex flex-col justify-around py-1">
+        {["clima-row0.png", "clima-row1.png", "clima-row2.png"].map((r) => (
+          <img key={r} src={`${A}/${r}`} alt="Sustituciones de piezas por clima" className="w-full object-contain px-2" />
+        ))}
+      </div>
+      <p className="text-[8px] text-muted-foreground px-3 pb-1 leading-tight">
+        Cada pieza tiene su versión para calor y para frío.
       </p>
     </div>
   );
@@ -245,6 +257,25 @@ function Offer() {
   return (
     <section id="oferta" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-5 md:px-16 max-w-xl">
+        {/* anti-riesgo */}
+        <div className="rounded-2xl border-2 border-navy bg-navy/5 p-5 md:p-6 mb-6">
+          <p className="text-foreground text-xl md:text-2xl font-bold text-center mb-4">No te puedes equivocar</p>
+          <ul className="space-y-2.5">
+            {[
+              "Las 30 piezas ya están elegidas por una consultora — no tienes que adivinar.",
+              "Los enlaces, listos y en 3 rangos de precio — no compras mal.",
+              "Los 300 looks, ya armados — tú solo los copias.",
+              "Vas a tu ritmo, con acceso de por vida.",
+              "Y si en 7 días sientes que no es para ti, te devolvemos el 100%.",
+            ].map((t) => (
+              <li key={t} className="flex items-start gap-2.5 text-foreground text-sm md:text-base leading-relaxed">
+                <ShieldCheck className="w-5 h-5 shrink-0 text-navy mt-0.5" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* urgencia */}
         <div className="rounded-xl bg-destructive text-destructive-foreground py-3 px-4 text-center mb-4 font-semibold text-sm md:text-base">
           El precio de lanzamiento termina hoy · {mm}:{ss}

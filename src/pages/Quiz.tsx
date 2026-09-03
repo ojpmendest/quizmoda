@@ -263,8 +263,11 @@ export default function Quiz() {
               Guía 30 piezas · 300 looks
             </p>
             <h1 className="font-serif text-2xl md:text-4xl text-foreground leading-tight">
-              Empieza tu clóset de cero con <strong>30 piezas estratégicas</strong>
+              Tu clóset está lleno y aún así no tienes nada que ponerte.
             </h1>
+            <p className="text-foreground text-base md:text-lg -mt-2">
+              Empieza de cero con <strong>30 piezas estratégicas</strong>.
+            </p>
             <img
               src={`${A}/antes-despues.jpg`}
               alt="Antes y después: de no saber qué ponerte a tener 300 looks con 30 piezas"
@@ -279,7 +282,7 @@ export default function Quiz() {
               className="w-full h-14 md:h-16 rounded-xl text-cream text-base md:text-lg font-semibold shadow-md hover:opacity-95 transition-opacity"
               style={{ background: "linear-gradient(90deg, hsl(145 35% 45%), hsl(145 45% 55%))" }}
             >
-              Ver mi lista
+              Ver mis 30 piezas
             </button>
             <p className="text-xs text-muted-foreground">Menos de 2 minutos</p>
           </div>
